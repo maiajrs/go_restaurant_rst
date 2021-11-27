@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 import Header from '../../components/Header';
 import api from '../../services/api';
-import Food from '../../components/Food';
+import Food from '../../components/Food/food';
 import ModalAddFood from '../../components/ModalAddFood';
 import ModalEditFood from '../../components/ModalEditFood';
 import { FoodsContainer } from './styles';
@@ -20,6 +20,7 @@ class Dashboard extends Component {
 
   async componentDidMount() {
     const response = await api.get('/foods');
+    console.log(response.data)
 
     this.setState({ foods: response.data });
   }
@@ -86,6 +87,7 @@ class Dashboard extends Component {
 
   render() {
     const { modalOpen, editModalOpen, editingFood, foods } = this.state;
+    console.log(foods)
 
     return (
       <>
@@ -108,7 +110,7 @@ class Dashboard extends Component {
               <Food
                 key={food.id}
                 food={food}
-                handleDelete={this.handleDeleteFood}
+                handleDeleteFood={this.handleDeleteFood}
                 handleEditFood={this.handleEditFood}
               />
             ))}
