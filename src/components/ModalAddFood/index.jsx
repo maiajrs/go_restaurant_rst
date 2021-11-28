@@ -26,6 +26,7 @@ class ModalAddFood extends Component {
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
         <Form ref={this.formRef} onSubmit={this.handleSubmit}>
           <h1>Novo Prato</h1>
+          <h1>Novo Prato</h1>
           <Input name="image" placeholder="Cole o link aqui" />
 
           <Input name="name" placeholder="Ex: Moda Italiana" />
