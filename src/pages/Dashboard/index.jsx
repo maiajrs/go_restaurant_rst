@@ -20,7 +20,6 @@ class Dashboard extends Component {
 
   async componentDidMount() {
     const response = await api.get('/foods');
-    console.log(response.data)
 
     this.setState({ foods: response.data });
   }
@@ -33,6 +32,7 @@ class Dashboard extends Component {
         ...food,
         available: true,
       });
+      console.log(response.data)
 
       this.setState({ foods: [...foods, response.data] });
     } catch (err) {
@@ -87,7 +87,6 @@ class Dashboard extends Component {
 
   render() {
     const { modalOpen, editModalOpen, editingFood, foods } = this.state;
-    console.log(foods)
 
     return (
       <>

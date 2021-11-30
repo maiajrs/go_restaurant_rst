@@ -26,6 +26,7 @@ export const Container = styled("div")<{available: boolean}>`
 
   section.body {
     padding: 30px;
+    min-height: 211px;
 
     h2 {
       color: #3d3d4d;
