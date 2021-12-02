@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export  type Food = {
   available: boolean;
-  id: number;
+  id: string;
   description: string;
   image: string;
   name: string;
@@ -15,8 +15,8 @@ export  type Food = {
 
 interface FoodProps {
   food: Food;
-  handleDeleteFood: (id: number) => Promise<void>;
-  handleEditFood: (food: Food) => Promise<void>;
+  handleDeleteFood: (id: string) => Promise<void>;
+  handleEditFood: (food: Food) => void;
 }
 
 export default function FoodCard({food, handleDeleteFood, handleEditFood}: FoodProps ) {
@@ -33,6 +33,7 @@ export default function FoodCard({food, handleDeleteFood, handleEditFood}: FoodP
 
     handleEditFood(food);
   }
+
     return (
       <Container available={available}>
         <header>
